@@ -1,0 +1,107 @@
+/* बेसिक स्टाइलिंग */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    margin: 0;
+    padding: 15px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #0056b3;
+}
+
+/* कैलेंडर का मुख्य कंटेनर */
+#calendar-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+}
+
+/* हर महीने का स्टाइल */
+.month {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.month-header {
+    background-color: #007bff;
+    color: white;
+    padding: 12px;
+    text-align: center;
+    font-size: 1.25em;
+    font-weight: bold;
+}
+
+/* सप्ताह के दिन */
+.weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background-color: #f9f9f9;
+    padding: 10px 5px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.weekdays div:first-child {
+    color: #e63946;
+}
+
+/* तारीखों का ग्रिड */
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+    padding: 5px;
+}
+
+/* हर एक तारीख का डिब्बा */
+.day {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    aspect-ratio: 1 / 1;
+    font-size: 0.9em;
+    position: relative;
+}
+
+.day.empty {
+    background-color: transparent;
+}
+
+.day.sunday {
+    color: #e63946;
+    font-weight: bold;
+}
+
+/* छुट्टी का स्टाइल (सिर्फ हाइलाइट) */
+.day.holiday {
+    background-color: #fdf0f1;
+    color: #d90429;
+    font-weight: bold;
+    border-radius: 50%;
+}
+
+/* --- नया: छुट्टी की लिस्ट का स्टाइल --- */
+.holiday-list {
+    padding: 10px 15px;
+    border-top: 1px solid #eee;
+    font-size: 0.9em;
+}
+
+.holiday-item {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* आइकन और टेक्स्ट के बीच जगह */
+    padding: 5px 0;
+}
+
+.holiday-item strong {
+    color: #d90429; /* तारीख को लाल रंग */
+}
